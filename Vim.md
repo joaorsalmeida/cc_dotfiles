@@ -1,10 +1,10 @@
 ## Vim Key Mappings
 
-- Rspec + Tmux + Rubocop
-  - \<space\>rs - Run rspec <file>
-  - \<space\>ra - Run rspec spec (all files)
-  - \<space\>rn - Run rspec spec (nearest spec)
-  - \<space\>rl - Run last spec
+- Vim Test + Tmux + Rubocop
+  - \<space\>ra - Run all tests (all files)
+  - \<space\>rs - Run tests on current <file>
+  - \<space\>rn - Run nearest test
+  - \<space\>rl - Run last test
   - \<space\>ru - Run full rubocop
 
 - Ctrl-P Fuzzy Finder

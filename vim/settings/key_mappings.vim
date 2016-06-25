@@ -1,11 +1,13 @@
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
 
-" vim-rspec mappings
-nnoremap <Leader>rs :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>rn :call RunNearestSpec()<CR>
-nnoremap <Leader>rl :call RunLastSpec()<CR>
-nnoremap <Leader>ra :call RunAllSpecs()<CR>
+" vim-test mappings
+let test#strategy = "vtr"
+nnoremap <Leader>rs :TestFile<CR>
+nnoremap <Leader>rn :TestNearest<CR>
+nnoremap <Leader>rl :TestLast<CR>
+nnoremap <Leader>ra :TestSuite<CR>
+nnoremap <Leader>rr :TestVisit<CR>
 
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
