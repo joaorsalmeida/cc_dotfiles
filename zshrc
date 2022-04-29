@@ -1,12 +1,11 @@
 setopt promptsubst
 
-
 # load our own completion functions
 fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
 
 # completion
 autoload -U compinit
-compinit
+compinit -u
 
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
@@ -56,9 +55,6 @@ set -o nobeep # no annoying beeps
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-# Peepcode theme to make your terminal simple and beautiful
-source ~/.zsh/themes/peepcode.theme
-
 # Zsh syntax highlight
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 TERM=screen-256color
@@ -66,5 +62,16 @@ TERM=screen-256color
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
+# Peepcode theme to make your terminal simple and beautiful
+source ~/.zsh/themes/peepcode.theme
+
 # Your secrets env var
 [[ -f ~/.secrets ]] && source ~/.secrets
+
+setopt interactivecomments
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm"  ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

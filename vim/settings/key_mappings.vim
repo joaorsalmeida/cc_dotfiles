@@ -43,11 +43,11 @@ nmap <silent> <Leader>vr :so ~/.vimrc<CR>
 " Type <space>hl to toggle highlighting on/off, and show current value.
 noremap <Leader>hl :set hlsearch! hlsearch?<CR>
 
-" Remapping CtrlP
-" let g:ctrlp_map = ' t'
+" CtrlP
 nnoremap <silent> <Leader>t :CtrlP<CR>
 nnoremap <silent> <Leader>p :CtrlP<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>m :CtrlPMRU<CR>
 
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <Leader>- :wincmd _<cr>:wincmd \|<cr>
@@ -56,6 +56,11 @@ nnoremap <Leader>= :wincmd =<cr>
 "" Tabs
 nnoremap <S-Tab> gt
 nnoremap <silent> <S-t> :tabnew<CR>
+
+" copy and paste
+" <space>y + motion ex: <space>yw
+nnoremap <Leader>y "+y
+nnoremap <Leader>p "+p<CR>
 
 " Rubocop
 map <Leader>ru :call VtrSendCommand('rubocop')<CR>
@@ -80,8 +85,7 @@ inoremap <S-Tab> <c-n>
 
 function! CloseNerdTree()
   if g:NERDTree.IsOpen()
-    NERDTreeFind
-    q
+    NERDTreeClose
   else
     NERDTreeFind
   endif
@@ -97,8 +101,5 @@ map <Leader>ct :!ctags -R .<CR>
 "grep the current word using K (mnemonic Kurrent)
 nnoremap <silent> K :Ag <cword><CR>
 
-" It's better for your hand ;)
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" Git Status
+nnoremap <Leader>gs :Git<CR>
