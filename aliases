@@ -163,10 +163,12 @@ alias rrs='rake routes'
 
 # Rspec
 alias rs='rspec spec'
+alias brspec='bundle exec rspec'
 
 # Rails
 alias rc='rails c'
 alias rsb='rails s -b 0.0.0.0'
+alias brails='bundle exec rails'
 
 if [[ $os_family == 'darwin' ]]
 then
