@@ -20,7 +20,7 @@ task :install do
   install_prereqs
   install_fonts
   install_vim_plugins
-  install_zsh_syntax_highlighting
+  install_zsh_zinit
   install_tmux_battery_plugin
   tmux_copy_mode
   add_vimrc_local
@@ -43,10 +43,11 @@ def change_shell
   run_command %{ chsh -s $(which zsh) }
 end
 
-def install_zsh_syntax_highlighting
-  unless File.exists?("#{ENV["HOME"]}/.zsh-syntax-highlighting")
-    run_command %{ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh-syntax-highlighting }
-  end
+def install_zsh_zinit
+  puts "Install zinit"
+  system "bash -c \"$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)\""
+  file = "#{ENV["HOME"]}/.zshrc"
+  system "cat #{cc_dotfiles_folder}/zsh/zinit_plugins >> #{file}"
 end
 
 def tmux_copy_mode

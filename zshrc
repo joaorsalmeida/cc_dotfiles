@@ -1,12 +1,5 @@
 setopt promptsubst
 
-# load our own completion functions
-fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
-
-# completion
-autoload -U compinit
-compinit -u
-
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -35,10 +28,6 @@ setopt extendedglob
 # Allow [ or ] whereever you want
 unsetopt nomatch
 
-# vi mode
-bindkey -v
-bindkey "^F" vi-cmd-mode
-bindkey jj vi-cmd-mode
 
 # handy keybindings
 bindkey "^A" beginning-of-line
