@@ -32,9 +32,10 @@ then
       ;;
     Darwin )
       echo "  - vim (macvim)"
-      echo "  - google-chrome (mac)"
       echo "  - iterm2 (mac)"
-      echo "  - atom (mac)"
+      echo "  - vscode (mac)"
+      echo "  - asdf (ruby + nodejs plugins)"
+      echo "  - docker"
       sudo usermod -a -G rvm `whoami`
       ;;
     CYGWIN* | MSYS*)
