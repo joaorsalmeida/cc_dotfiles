@@ -109,7 +109,7 @@ ZSH_THEME_ASDF_PROMPT_FILTER="ALL"
 ZSH_THEME_ASDF_PROMPT_VERSION_DETAIL="PATCH"
 ZSH_THEME_ASDF_PROMPT_VERSION_RESOLUTION="NONE"
 
-local smiley="%(?,%{$fg_bold[green]%}${CC_GOOD_COMMAND}%{$reset_color%},%{$fg_bold[red]%}${CC_BAD_COMMAND}%{$reset_color%})"
+local smiley='%(?.%F{green}☺%f.%F{red}☹%f)'
 
 PROMPT='
 %~

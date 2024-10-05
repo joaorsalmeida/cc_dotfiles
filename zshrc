@@ -45,7 +45,6 @@ set -o nobeep # no annoying beeps
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # Zsh syntax highlight
-source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 TERM=screen-256color
 
 # Local config

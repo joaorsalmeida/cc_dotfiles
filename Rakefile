@@ -62,7 +62,7 @@ end
 
 def install_tmux_battery_plugin
   folder = '.tmux-battery'
-  unless File.exists?("#{ENV["HOME"]}/#{folder}")
+  unless File.exist?("#{ENV["HOME"]}/#{folder}")
     run_command %{ git clone --depth=1 https://github.com/tmux-plugins/tmux-battery $HOME/#{folder} }
     run_command %{ echo "run-shell $HOME/#{folder}/battery.tmux" >> $HOME/.tmux.conf.local }
   end
@@ -74,7 +74,7 @@ def install_files(files)
     source = "#{ENV["PWD"]}/#{f}"
     file = "#{ENV["HOME"]}/.#{file_name}"
 
-    if File.exists?(file)
+    if File.exist?(file)
       puts "Moving #{file} to #{file}.bkp"
       run_command %{ mv #{file} #{file}.bkp }
     end
